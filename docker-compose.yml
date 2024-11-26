@@ -1,0 +1,80 @@
+version: '3.7'
+
+networks:
+  dickens-network:
+    driver: bridge
+
+services:
+  temporal:
+    image: temporalio/server:latest
+    container_name: dickens-temporal
+    ports:
+      - "7233:7233" # Temporal gRPC port
+    environment:
+      - DB=postgresql
+      - DB_PORT=5432
+      - POSTGRES_USER=temporal
+      - POSTGRES_PASSWORD=temporalpassword
+      - POSTGRES_SEEDS=dickens-postgres
+      - DYNAMIC_CONFIG_FILE_PATH=config/dynamic_config.yaml
+    volumes:
+      - ./docker/temporal/config:/etc/temporal/config
+    depends_on:
+      - dickens-postgres
+    networks:
+      - dickens-network
+
+  dickens-postgres:
+    image: postgres:13
+    container_name: dickens-postgres
+    environment:
+      POSTGRES_USER: temporal
+      POSTGRES_PASSWORD: temporalpassword
+      POSTGRES_DB: temporal
+    ports:
+      - "5432:5432"
+    volumes:
+      - dickens-postgres-data:/var/lib/postgresql/data
+    networks:
+      - dickens-network
+
+  quarkus-backend:
+    build:
+      context: ./dickens-backend
+      dockerfile: src/main/docker/Dockerfile.jvm
+    container_name: dickens-backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - temporal
+    networks:
+      - dickens-network
+
+  temporal-admin-tools:
+    image: temporalio/admin-tools:latest
+    container_name: dickens-temporal-tools
+    depends_on:
+      - temporal
+    entrypoint: >
+      /bin/sh -c "
+      while ! nc -z temporal 7233; do
+        sleep 1;
+      done;
+      tctl --namespace default namespace register"
+    networks:
+      - dickens-network
+
+  temporal-web:
+    image: temporalio/web:latest
+    container_name: dickens-temporal-web
+    ports:
+      - "8088:8088" # Temporal Web UI
+    depends_on:
+      - temporal
+    environment:
+      - TEMPORAL_GRPC_ENDPOINT=dickens-temporal:7233
+    networks:
+      - dickens-network
+
+volumes:
+  dickens-postgres-data:
