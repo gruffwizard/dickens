@@ -49,6 +49,10 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-rest-jackson</artifactId>
+        </dependency>
+        <dependency>
             <groupId>io.quarkiverse.temporal</groupId>
             <artifactId>quarkus-temporal</artifactId>
             <version>0.0.14</version>
