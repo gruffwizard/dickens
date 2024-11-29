@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d84f644b-9cd7-43a3-a8fb-2b4579f415af" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../shared/src/main/java/dev/gruff/dickens/workflow/WorkerRegistryWorkflow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bluesky/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bluesky/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bluesky/src/main/java/dev/gruff/dickens/TemporalWorker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bluesky/src/test/java/dev/gruff/dickens/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dickens-backend/.dockerignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dickens-backend/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dickens-backend/.mvn/wrapper/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dickens-backend/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dickens-backend/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dickens-backend/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dickens-backend/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dickens-backend/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dickens-backend/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dickens-backend/src/main/docker/Dockerfile.jvm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dickens-backend/src/main/docker/Dockerfile.legacy-jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dickens-backend/src/main/docker/Dockerfile.native" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dickens-backend/src/main/docker/Dockerfile.native-micro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dickens-backend/src/main/java/dev/gruff/dickens/api/WorkflowResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dickens-backend/src/main/java/dev/gruff/dickens/ui/SketchResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dickens-backend/src/main/resources/META-INF/resources/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dickens-backend/src/main/resources/META-INF/resources/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dickens-backend/src/main/resources/META-INF/resources/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dickens-backend/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shared/src/main/java/dev/gruff/dickens/workflow/SocialMediaActivitiesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shared/src/main/java/dev/gruff/dickens/workflow/SocialMediaActivitiesImpl.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;spoole167&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/gruffwizard/dickens.git&quot;,
+    &quot;accountId&quot;: &quot;db6da1e0-c6f9-43c6-80f2-787f15a41909&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2pW3cbit37GEzrVcdQinIq2AFHa" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/spoole/Github/dickens/twitter",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d84f644b-9cd7-43a3-a8fb-2b4579f415af" name="Changes" comment="" />
+      <created>1732868085307</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732868085307</updated>
+    </task>
+    <servers />
+  </component>
+</project>

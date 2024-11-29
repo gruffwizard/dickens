@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3.8'
 
 networks:
   dickens-network:
@@ -7,8 +7,8 @@ networks:
 services:
   temporal:
     image: temporalio/auto-setup:latest
-    container_name: temporal
-    ports:
+    container_name: dickens-temporal
+    ports:  
       - 7233:7233
     environment:
       - DB=postgres12
@@ -25,11 +25,11 @@ services:
     volumes:
       - ./docker/temporal/config:/etc/temporal/config/dynamicconfig
     depends_on:
-      - dickens-postgres
+      - postgres
     networks:
       - dickens-network
 
-  dickens-postgres:
+  postgres:
     image: postgres:13
     container_name: dickens-postgres
     environment:
@@ -42,11 +42,11 @@ services:
     networks:
       - dickens-network
 
-  quarkus-backend:
+  server:
     build:
-      context: ./dickens-backend
+      context: ./server
       dockerfile: src/main/docker/Dockerfile.jvm
-    container_name: dickens-backend
+    container_name: dickens-server
     ports:
       - "8080:8080"
     depends_on:
@@ -72,7 +72,8 @@ services:
 
   bluesky:
     build:
-      context: ./bluesky
+      context: ./clients/bluesky
+      container_name: dickens-bluesky
     depends_on:
       temporal:
         condition: service_healthy
@@ -80,5 +81,43 @@ services:
       TEMPORAL_SERVICE_ADDRESS: temporal:7233
     networks:
       - dickens-network
+
+  twitter:
+    build:
+      context: ./clients/twitter
+      container_name: dickens-twitter
+      dockerfile: Dockerfile
+    environment:
+      - TEMPORAL_HOST=temporal:7233
+      # Add Twitter API credentials when implementing actual integration
+      # - TWITTER_API_KEY=your_api_key
+      # - TWITTER_API_SECRET=your_api_secret
+      # - TWITTER_ACCESS_TOKEN=your_access_token
+      # - TWITTER_ACCESS_SECRET=your_access_secret
+    depends_on:
+      temporal:
+        condition: service_healthy
+    networks:
+      - dickens-network
+    
+
+  linkedin:
+    build:
+      context: ./clients/linkedin
+      container_name: dickens-linkedin
+      dockerfile: Dockerfile
+    environment:
+      - TEMPORAL_HOST=temporal:7233
+      # Add LinkedIn API credentials when implementing actual integration
+      # - LINKEDIN_CLIENT_ID=your_client_id
+      # - LINKEDIN_CLIENT_SECRET=your_client_secret
+      # - LINKEDIN_ACCESS_TOKEN=your_access_token
+    depends_on:
+      temporal:
+        condition: service_healthy
+    networks:
+      - dickens-network
+    
+
 volumes:
   dickens-postgres-data:

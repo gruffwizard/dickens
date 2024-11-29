@@ -18,4 +18,4 @@ buildNumber.properties
 .DS_Store
 .env
 /.idea
-/bluesky/.mvn
+node_modules/
